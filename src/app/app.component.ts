@@ -8,7 +8,8 @@ import { User } from './address-card/user.interface';
 })
 export class AppComponent {
   user: User;
-
+  inputText: string = 'Initial value';
+  
   constructor() {
     this.user = new User;
     this.user.name = 'Esther Pato',
