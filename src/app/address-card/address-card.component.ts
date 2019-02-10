@@ -8,14 +8,16 @@ import { User } from './user.interface';
 })
 export class AddressCardComponent implements OnInit {
   @Input('user') user: User;
+  isCollapsed: boolean;
 
-  constructor() { }
-
-  ngOnInit() {
-    this.hasPhones()
+  constructor() {
+    this.isCollapsed = true;
   }
 
-  hasPhones() {
-    return this.user.phones.length > 0 ? true : false;
+  ngOnInit() {
+  }
+
+  handleClick() {
+    this.isCollapsed = !this.isCollapsed
   }
 }

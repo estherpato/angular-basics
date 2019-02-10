@@ -1,11 +1,16 @@
 <div class="card">
-    <h1>{{user?.name}}</h1>
-    <h2>{{user?.job}}</h2>
+  <h1>{{user?.name}}</h1>
+  <h2>{{user?.job}}</h2>
+  <button *ngIf="isCollapsed" (click)="handleClick()">Show info</button>
+  <button *ngIf="!isCollapsed" (click)="handleClick()">Hide info</button>
+  
+  <div *ngIf="!isCollapsed">
     <p>{{user?.address}}</p>
-  <div *ngIf="hasPhones()">
-    <p>Phone:</p>
-    <ul *ngFor="let phone of user?.phones">
+    <div *ngIf="this.user.phones.length">
+      <p>Phone:</p>
+      <ul *ngFor="let phone of user?.phones">
         <li>{{phone}}</li>
-    </ul>
+      </ul>
     </div>
+  </div>
 </div>
