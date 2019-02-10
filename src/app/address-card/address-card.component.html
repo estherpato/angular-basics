@@ -1,0 +1,11 @@
+<div class="card">
+    <h1>{{user?.name}}</h1>
+    <h2>{{user?.job}}</h2>
+    <p>{{user?.address}}</p>
+  <div *ngIf="hasPhones()">
+    <p>Phone:</p>
+    <ul *ngFor="let phone of user?.phones">
+        <li>{{phone}}</li>
+    </ul>
+    </div>
+</div>
